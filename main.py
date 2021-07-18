@@ -11,3 +11,7 @@ in_memory_datastore = [
 @app.get('/programming_languages')
 def get_programming_languages():
    return {"programming_languages" : in_memory_datastore }
+
+@app.get('/programming_languages/{programming_language_id}')
+def get_programming_language(programming_language_id: int):
+   return in_memory_datastore[programming_language_id]
